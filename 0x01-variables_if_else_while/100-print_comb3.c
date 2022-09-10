@@ -12,10 +12,13 @@ int main(void)
 
 	while (i <= '8')
 	{
-		for (j = '1'; j <= '9'; j++)
+		for (j = i + 1; j <= '9'; j++)
 		{
 			if (i == j)
 				j++;
+
+			if (j == 9)
+				i++;
 
 			putchar(i);
 			putchar(j);
@@ -32,6 +35,6 @@ int main(void)
 
 	putchar('\n');
 
-	return 0;
+	return (0);
 }
 
