@@ -14,12 +14,6 @@ int main(void)
 	{
 		for (j = i + 1; j <= '9'; j++)
 		{
-			if (i == j)
-				j++;
-
-			if (j == 9)
-				i++;
-
 			putchar(i);
 			putchar(j);
 
