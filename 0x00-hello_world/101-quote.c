@@ -14,7 +14,8 @@
  */
 int main(void)
 {
-	char err_mess[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char err_mess[] = "and that piece of art is useful\" - Dora Korpar, \
+2015-10-19\n";
 
 	fwrite(err_mess, sizeof(err_mess), 1, stderr);
 
