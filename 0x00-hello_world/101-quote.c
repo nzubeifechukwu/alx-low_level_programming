@@ -15,9 +15,9 @@
 int main(void)
 {
 	char err_mess[] = "and that piece of art is useful\" - Dora Korpar, \
-2015-10-19\n";
+2015-10-19";
 
-	fwrite(err_mess, sizeof(err_mess), 1, stderr);
+	fprintf(stderr, "%s\n", err_mess);
 
 	return (1);
 }
