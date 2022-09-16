@@ -9,16 +9,16 @@
 void fibonacci(int n)
 {
 	int i;
-	long long int fib[51] = {1, 2};
+	double fib[51] = {1, 2};
 
 	for (i = 2; i < n; i++)
 		fib[i] = fib[i - 1] + fib[i - 2];
 	for (i = 0; i < n; i++)
 	{
 		if (i == 0)
-			printf("%lld", fib[i]);
+			printf("%.0lf", fib[i]);
 		else
-			printf(", %lld", fib[i]);
+			printf(", %.0lf", fib[i]);
 	}
 	printf("\n");
 }
