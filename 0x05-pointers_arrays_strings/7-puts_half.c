@@ -36,7 +36,7 @@ void puts_half(char *str)
 	{
 		half = (_strlen(str) - 1) / 2;
 
-		for(i = half + 1; i < _strlen(str); i++)
+		for (i = half + 1; i < _strlen(str); i++)
 			_putchar(str[i]);
 	}
 	else
