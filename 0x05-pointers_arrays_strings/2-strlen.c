@@ -9,9 +9,6 @@ int _strlen(char *s)
 	int len = 0;
 	int i = 0;
 
-	/* if (s[0] == *s) */
-	/*	len++; */
-
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		len++;
