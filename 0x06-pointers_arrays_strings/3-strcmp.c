@@ -21,9 +21,9 @@ int _strcmp(char *s1, char *s2)
 		for (x = 0; x < j; x++)
 		{
 			if (s1[x] > s2[x])
-				return (1);
+				return (15);
 			else if (s1[x] < s2[x])
-				return (-1);
+				return (-15);
 		}
 	}
 	else
@@ -31,9 +31,9 @@ int _strcmp(char *s1, char *s2)
 		for (x = 0; x < i; x++)
 		{
 			if (s1[x] > s2[x])
-				return (1);
+				return (15);
 			else if (s1[x] < s2[x])
-				return (-1);
+				return (-15);
 		}
 	}
 
