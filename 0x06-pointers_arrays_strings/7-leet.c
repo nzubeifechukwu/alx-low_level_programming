@@ -11,6 +11,7 @@
  * You can only use two loops in your code
  * You are not allowed to use switch
  * You are not allowed to use any ternary operation
+ *
  * Return: encoded string
  */
 char *leet(char *str)
@@ -22,7 +23,7 @@ char *leet(char *str)
 
 	for (i = 0; *(str + i) != '\0'; i++)
 	{
-		for (j = 0; *(up + j) != '\0'; j++)
+		for (j = 0; j < 5; j++)
 		{
 			if (*(str + i) == *(low + j) || *(str + i) == *(up + j))
 				*(str + i) = *(dig + j);
