@@ -11,15 +11,14 @@
  * You can only use two loops in your code
  * You are not allowed to use switch
  * You are not allowed to use any ternary operation
- *
- * Return: encode string
+ * Return: encoded string
  */
 char *leet(char *str)
 {
 	int i, j;
-	char low[] = "aeotl";
-	char up[] = "AEOTL";
-	char dig[] = "43071";
+	char low[6] = "aeotl";
+	char up[6] = "AEOTL";
+	char dig[6] = "43071";
 
 	for (i = 0; *(str + i) != '\0'; i++)
 	{
