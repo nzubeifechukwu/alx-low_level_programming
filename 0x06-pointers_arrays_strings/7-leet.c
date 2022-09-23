@@ -17,17 +17,16 @@
 char *leet(char *str)
 {
 	int i, j;
-	char let[] = "aAeEoOtTlL";
-/*	char low[] = "aeotl"; */
-/*	char up[] = "AEOTL"; */
-	char dig[] = "4433007711";
+	char low[] = "aeotl";
+	char up[] = "AEOTL";
+	char dig[] = "43071";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; *(str + i) != '\0'; i++)
 	{
-		for (j = 0; let[j] != '\0'; j++)
+		for (j = 0; *(low + j) != '\0'; j++)
 		{
-			if (str[i] == let[j])
-				str[i] = dig[j];
+			if (*(str + i) == *(low + j) || *(str + i) == *(up + j))
+				*(str + i) = *(dig + j);
 		}
 	}
 
