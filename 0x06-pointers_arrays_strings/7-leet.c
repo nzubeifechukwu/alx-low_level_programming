@@ -17,15 +17,14 @@
 char *leet(char *str)
 {
 	int i, j;
-	char low[6] = "aeotl";
-	char up[6] = "AEOTL";
-	char dig[6] = "43071";
+	char let[] = "aAeEoOtTlL";
+	char dig[] = "4433007711";
 
 	for (i = 0; *(str + i) != '\0'; i++)
 	{
-		for (j = 0; j < 5; j++)
+		for (j = 0; *(let + j) != '\0'; j++)
 		{
-			if (*(str + i) == *(low + j) || *(str + i) == *(up + j))
+			if (*(str + i) == *(let + j))
 				*(str + i) = *(dig + j);
 		}
 	}
