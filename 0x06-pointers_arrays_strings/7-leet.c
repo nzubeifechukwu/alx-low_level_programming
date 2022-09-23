@@ -20,7 +20,7 @@ char *leet(char *str)
 	char let[] = "aAeEoOtTlL";
 /*	char low[] = "aeotl"; */
 /*	char up[] = "AEOTL"; */
-	char dig[] = "43071";
+	char dig[] = "4433007711";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
