@@ -21,12 +21,12 @@ char *leet(char *str)
 	char up[] = "AEOTL";
 	char dig[] = "43071";
 
-	for (i = 0; *(str + i) != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		for (j = 0; low[j] != '\0'; j++)
 		{
-			if (*(str + i) == low[j] || *(str + i) == up[j])
-				*(str + i) = dig[j];
+			if (str[i] == low[j] || str[i] == up[j])
+				str[i] = dig[j];
 		}
 	}
 
