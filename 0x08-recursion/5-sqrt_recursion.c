@@ -7,14 +7,14 @@
  */
 int square_root(int r, int n)
 {
-	int next_r = (r + (n / r)) / 2; /* next_r converges to sqrt of n */
-
-	if (n < 0)
-		return (-1);
-	else if (r * r <= n && (r + 1) * (r + 1) > n)
-		return (r);
-	else
-		return (square_root(next_r, n));
+	if (r <= n / 2)
+	{
+		if (r * r == n)
+			return (r);
+		else
+			return (square_root(r + 1, n));
+	}
+	return (-1);
 }
 
 /**
@@ -25,10 +25,9 @@ int square_root(int r, int n)
  */
 int _sqrt_recursion(int n)
 {
-	int r = square_root(1, n);
-
-	if (r * r != n)
+	if (n < 0)
 		return (-1);
-
-	return (square_root(r, n));
+	if (n == 1)
+		return (1);
+	return (square_root(0, n));
 }
