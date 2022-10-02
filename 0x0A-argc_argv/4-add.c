@@ -12,20 +12,13 @@
  */
 int main(int argc, char *argv[])
 {
-	unsigned int j;
-	int i, sum = 0;
+	int j, i, sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
-		if (argc == 1)
+		for (j = 0; argv[i][j]; j++)
 		{
-			puts("0");
-			break;
-		}
-
-		for (j = 0; j < strlen(*(argv + i)); j++)
-		{
-			if (!isdigit(*(argv + i)[j]))
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				puts("Error");
 				return (1);
