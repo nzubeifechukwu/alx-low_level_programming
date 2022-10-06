@@ -4,6 +4,7 @@
  * string_nconcat - concats two strings
  * @s1: one string
  * @s2: another string
+ * @n: number of chars of s2 to concat to s1
  *
  * Return: pointer to the mem space of concat string, NULL if mem alloc fails
  */
@@ -27,7 +28,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n < l2)
 		l2 = n;
 
-	sconc = malloc(sizeof(char) * (l1 + l2) + 1);
+	sconc = malloc(sizeof(*sconc) * (l1 + l2) + 1);
 
 	if (sconc == NULL)
 		return (NULL);
@@ -40,6 +41,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		sconc[j] = s2[i];
 		i++;
 	}
+
 	sconc[j] = '\0';
+
 	return (sconc);
 }
