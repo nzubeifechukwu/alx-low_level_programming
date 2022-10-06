@@ -18,7 +18,9 @@ int **alloc_grid(int width, int height)
 	grid = malloc(sizeof(int *) * height);
 
 	if (grid == NULL)
+	{
 		return (NULL);
+	}
 
 	/* allocating memory space for grid columns */
 	for (h = 0; h < height; h++)
@@ -27,6 +29,9 @@ int **alloc_grid(int width, int height)
 
 		if (grid[h] == NULL)
 		{
+			for (; h >= 0; h--)
+				free(grid[h]);
+
 			free(grid);
 			return (NULL);
 		}
