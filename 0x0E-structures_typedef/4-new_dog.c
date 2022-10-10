@@ -14,13 +14,12 @@ char *_strcpy(char *s)
 
 	scp = malloc(sizeof(*s) + 1);
 
-	if (scp == NULL)
-		return (NULL);
-
-	for (i = 0; *(s + i); i++)
-		scp[i] = s[i];
-
-	scp[i] = '\0';
+	if (scp)
+	{
+		for (i = 0; *(s + i); i++)
+			scp[i] = s[i];
+		scp[i] = '\0';
+	}
 	return (scp);
 }
 
