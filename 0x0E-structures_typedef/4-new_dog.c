@@ -10,15 +10,17 @@
 char *_strcpy(char *s)
 {
 	char *scp;
-	int i;
+	int i, slen = 0;
 
-	scp = malloc(sizeof(*s) + 1);
+	while (*(s + slen))
+		slen++;
+
+	scp = malloc(slen + 1);
 
 	if (scp)
 	{
-		for (i = 0; *(s + i); i++)
+		for (i = 0; i < slen; i++)
 			scp[i] = s[i];
-		scp[i] = '\0';
 	}
 	return (scp);
 }
