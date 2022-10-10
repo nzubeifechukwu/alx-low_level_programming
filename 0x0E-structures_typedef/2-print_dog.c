@@ -10,8 +10,6 @@
  */
 void print_dog(struct dog *d)
 {
-	d = malloc(sizeof(struct dog));
-
 	if (d)
 	{
 		if (d->name)
@@ -28,7 +26,5 @@ void print_dog(struct dog *d)
 			printf("Owner: %s\n", d->owner);
 		else
 			puts("Owner: (nil)");
-
-		free(d);
 	}
 }
