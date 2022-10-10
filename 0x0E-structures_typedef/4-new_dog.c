@@ -21,6 +21,7 @@ char *_strcpy(char *s)
 	{
 		for (i = 0; i < slen; i++)
 			scp[i] = s[i];
+		scp[i] = '\0';
 	}
 	return (scp);
 }
