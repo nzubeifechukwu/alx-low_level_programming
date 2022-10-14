@@ -12,31 +12,34 @@ void print_all(const char * const format, ...)
 	char *s, *sep = "";
 
 	va_start(ap, format);
-	while (*(format + c))
+	if (format)
 	{
-		switch (*(format + c))
+		while (*(format + c))
 		{
-			case 'c':
-				printf("%s%c", sep, va_arg(ap, int));
-				break;
-			case 'i':
-				printf("%s%d", sep, va_arg(ap, int));
-				break;
-			case 'f':
-				printf("%s%f", sep, va_arg(ap, double));
-				break;
-			case 's':
-				s = va_arg(ap, char *);
-				if (s == NULL)
-					s = "(nil)";
-				printf("%s%s", sep, s);
-				break;
-			default:
-				c++;
-				continue; /* ensures that sep (", ") is never printed first */
+			switch (*(format + c))
+			{
+				case 'c':
+					printf("%s%c", sep, va_arg(ap, int));
+					break;
+				case 'i':
+					printf("%s%d", sep, va_arg(ap, int));
+					break;
+				case 'f':
+					printf("%s%f", sep, va_arg(ap, double));
+					break;
+				case 's':
+					s = va_arg(ap, char *);
+					if (s == NULL)
+						s = "(nil)";
+					printf("%s%s", sep, s);
+					break;
+				default:
+					c++;
+					continue; /* ensures that sep (", ") is never printed first */
+			}
+			sep = ", ";
+			c++;
 		}
-		sep = ", ";
-		c++;
 	}
 	printf("\n");
 	va_end(ap);
