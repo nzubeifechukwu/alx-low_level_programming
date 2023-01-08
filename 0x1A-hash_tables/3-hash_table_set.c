@@ -44,6 +44,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *array_item, *curr_arr_item;
 
+	if (ht == NULL || key == NULL || value == NULL)
+		return (0);
+
 	array_item = create_array_item(key, value);
 
 	if (array_item == NULL)
