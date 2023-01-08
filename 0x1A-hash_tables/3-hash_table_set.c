@@ -43,18 +43,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *array_item, *curr_arr_item;
+	hash_node_t *head; /* To handle collision */
 
 	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
-
 	array_item = create_array_item(key, value);
-
 	if (array_item == NULL)
 		return (0);
-
 	index = key_index((const unsigned char *)key, ht->size);
 	curr_arr_item = ht->array[index];
-
 	if (curr_arr_item == NULL)
 	{
 		ht->array[index] = array_item;
@@ -62,9 +59,22 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		if (strcmp(curr_arr_item->key, key) == 0)
+		{
 			strcpy(ht->array[index]->value, value);
+		}
+		/* Handle collision */
 		else
-			return (0);
+		{
+			head = malloc(sizeof(hash_node_t));
+			if (head == NULL)
+				return (0);
+			strcpy(head->key, key);
+			if (head->key == NULL)
+				return (0);
+			strcpy(head->value, value);
+			head->next = ht->array[index];
+			ht->array[index] = head;
+		}
 	}
 	return (1);
 }
