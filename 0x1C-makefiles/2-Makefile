@@ -6,8 +6,5 @@ NAME = school
 all : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-main.o : main.c m.h
-	$(CC) -c main.c
-school.o : school.c m.h
-	$(CC) -c school.c
-
+$(OBJ): %.o: %.c
+	$(CC) -c $(CPPFLAGS) $(CFLAGS) $^ -o $@
