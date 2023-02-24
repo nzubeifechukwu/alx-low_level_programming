@@ -9,7 +9,7 @@ all: $(OBJ)
 
 .PHONY: clean
 clean:
-	-$(RM) -f $(SRC:%.c=.%.c.swp) $(SRC:%.c=.#%.c) $(NAME)
+	-$(RM) -f $(SRC:%.c=.%.c.swp) $(SRC:%.c=%.c~) $(NAME)
 
 .PHONY: oclean
 oclean:
@@ -17,7 +17,7 @@ oclean:
 
 .PHONY: fclean
 fclean:
-	-$(RM) -f $(SRC:%.c=.%.c.swp) $(SRC:%.c=.#%.c) $(NAME) $(OBJ)
+	-$(RM) -f $(SRC:%.c=.%.c.swp) $(SRC:%.c=%.c~) $(NAME) $(OBJ)
 
 .PHONY: re
 re:
