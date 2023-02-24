@@ -21,4 +21,4 @@ fclean:
 
 re:
 	oclean
-	-all
+	all
