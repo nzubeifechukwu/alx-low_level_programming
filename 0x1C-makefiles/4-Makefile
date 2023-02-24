@@ -10,9 +10,6 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
-
 clean:
 	-$(RM) $(wildcard *~) $(NAME)
 
@@ -20,9 +17,9 @@ oclean:
 	-$(RM) $(OBJ)
 
 fclean:
-	-clean
-	-oclean
+	-$(RM) $(wildcard *~) $(NAME)
+	-$(RM) $(OBJ)
 
 re:
-	-oclean
-	-%.o
+	-$(RM) $(OBJ)
+	-$(CC) $(OBJ) -o $(NAME)
