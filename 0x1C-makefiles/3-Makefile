@@ -21,4 +21,5 @@ fclean:
 
 .PHONY: re
 re:
+	-$(RM) -f $(OBJ)
 	-$(CC) $(OBJ) -o $(NAME)
