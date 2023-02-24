@@ -20,8 +20,9 @@ oclean:
 	-$(RM) $(OBJ)
 
 fclean:
-	-$(RM) $(wildcard *~) $(NAME) $(OBJ)
+	-clean
+	-oclean
 
 re:
-	-$(RM) $(OBJ)
+	-oclean
 	-%.o
